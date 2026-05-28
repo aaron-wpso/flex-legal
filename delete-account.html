@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLEX - MY Fitness Platform — Delete Account</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ff6b35, #ff3f81);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.4rem;
+      text-align: center;
+    }
+
+    .page-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+      text-align: center;
+    }
+
+    .page-desc {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      max-width: 420px;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: #161616;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 460px;
+    }
+
+    .field {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #aaa;
+      margin-bottom: 0.4rem;
+    }
+
+    .required-mark {
+      color: #ff3f81;
+      margin-left: 2px;
+    }
+
+    input {
+      width: 100%;
+      background: #0f0f0f;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      color: #e0e0e0;
+      font-size: 0.95rem;
+      padding: 0.7rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input::placeholder { color: #444; }
+
+    input:focus {
+      border-color: #ff6b35;
+    }
+
+    input.error {
+      border-color: #ff3f81;
+    }
+
+    .error-msg {
+      font-size: 0.78rem;
+      color: #ff3f81;
+      margin-top: 0.35rem;
+      display: none;
+    }
+
+    .error-msg.visible { display: block; }
+
+    .warning-box {
+      background: rgba(255, 63, 129, 0.08);
+      border: 1px solid rgba(255, 63, 129, 0.25);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      font-size: 0.83rem;
+      color: #cc8899;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .warning-box strong { color: #ff3f81; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.85rem;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #ff6b35, #ff3f81);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .submit-btn:active { transform: translateY(0); }
+
+    /* Modal */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+      z-index: 100;
+    }
+
+    .overlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      transform: scale(0.92);
+      transition: transform 0.25s;
+    }
+
+    .overlay.show .modal { transform: scale(1); }
+
+    .modal-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+
+    .modal-body {
+      font-size: 0.9rem;
+      color: #888;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+
+    .modal-btn {
+      padding: 0.7rem 2rem;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #ff6b35, #ff3f81);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .modal-btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+
+  <div class="logo">FLEX - MY Fitness Platform</div>
+  <h1 class="page-title">Delete Account</h1>
+  <p class="page-desc">Fill in your details below. We'll send a secure account deletion link to your registered email address.</p>
+
+  <div class="card">
+    <div class="warning-box">
+      <strong>Warning:</strong> Deleting your account is permanent and cannot be undone. All your data — including nutrition logs, workout history, points, and chat history — will be erased.
+    </div>
+
+    <form id="deleteForm" novalidate>
+
+      <div class="field">
+        <label for="phone">Phone Number <span class="required-mark">*</span></label>
+        <input type="tel" id="phone" placeholder="e.g. +60123456789" />
+        <div class="error-msg" id="phone-error">Phone number is required.</div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email Address <span class="required-mark">*</span></label>
+        <input type="email" id="email" placeholder="e.g. you@example.com" />
+        <div class="error-msg" id="email-error">A valid email address is required.</div>
+      </div>
+
+      <div class="field">
+        <label for="username">Username <span style="color:#555;font-weight:400;">(optional)</span></label>
+        <input type="text" id="username" placeholder="Your FLEX username" />
+      </div>
+
+      <div class="field">
+        <label for="address">Address <span style="color:#555;font-weight:400;">(optional)</span></label>
+        <input type="text" id="address" placeholder="Your registered address" />
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Deletion Request</button>
+    </form>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <div class="modal-icon">📬</div>
+      <div class="modal-title">Check Your Mailbox</div>
+      <div class="modal-body">
+        We've sent an account deletion link to your email address.<br><br>
+        Please check your inbox (and spam folder) and follow the link to confirm your request.
+      </div>
+      <button class="modal-btn" id="modalClose">Got it</button>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('deleteForm');
+    const overlay = document.getElementById('overlay');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const phone = document.getElementById('phone');
+      const email = document.getElementById('email');
+      const phoneErr = document.getElementById('phone-error');
+      const emailErr = document.getElementById('email-error');
+
+      let valid = true;
+
+      // Reset
+      phone.classList.remove('error');
+      email.classList.remove('error');
+      phoneErr.classList.remove('visible');
+      emailErr.classList.remove('visible');
+
+      if (!phone.value.trim()) {
+        phone.classList.add('error');
+        phoneErr.classList.add('visible');
+        valid = false;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim() || !emailPattern.test(email.value.trim())) {
+        email.classList.add('error');
+        emailErr.classList.add('visible');
+        valid = false;
+      }
+
+      if (valid) {
+        overlay.classList.add('show');
+      }
+    });
+
+    document.getElementById('modalClose').addEventListener('click', function () {
+      overlay.classList.remove('show');
+      form.reset();
+    });
+
+    // Close on backdrop click
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) overlay.classList.remove('show');
+    });
+  </script>
+
+</body>
+</html>
