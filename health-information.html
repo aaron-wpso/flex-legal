@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLEX - MY Fitness Platform — Health Information Sources</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    nav {
+      margin-bottom: 2.5rem;
+    }
+    nav a {
+      color: #ff6b35;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    nav a:hover { text-decoration: underline; }
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ff6b35, #ff3f81);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+      margin-bottom: 0.25rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: #fff;
+    }
+    .meta {
+      color: #666;
+      font-size: 0.85rem;
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    p { margin-bottom: 0.85rem; color: #c0c0c0; }
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 0.85rem;
+      color: #c0c0c0;
+    }
+    li { margin-bottom: 0.3rem; }
+    .disclaimer-box {
+      background: #161616;
+      border: 1px solid #ff6b3540;
+      border-left: 4px solid #ff6b35;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .disclaimer-box p {
+      margin-bottom: 0;
+      color: #c0c0c0;
+    }
+    .source {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: #666;
+    }
+    .source a {
+      color: #ff6b35;
+      text-decoration: none;
+    }
+    .source a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav><a href="index.html">← Back to Legal</a></nav>
+    <div class="logo">FLEX - MY Fitness Platform</div>
+    <h1>Health Information Sources</h1>
+    <p class="meta">Last Updated: 5 June 2026</p>
+
+    <div class="disclaimer-box">
+      <p><strong>Medical Disclaimer:</strong> Flex is a fitness and wellness application, not a medical device. All information provided in the app — including calorie targets, macronutrient recommendations, step-count goals, and AI coach responses — is for general informational and wellness purposes only. It is not intended to diagnose, treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional before making significant changes to your diet, exercise routine, or lifestyle, especially if you have an existing medical condition.</p>
+    </div>
+
+    <h2>1. Calorie &amp; TDEE Calculations</h2>
+    <p>Calorie targets displayed in Flex are estimated using the <strong>Mifflin-St Jeor equation</strong>, a peer-reviewed formula for calculating Basal Metabolic Rate (BMR). This value is then adjusted by an activity multiplier to produce a Total Daily Energy Expenditure (TDEE) unique to each user.</p>
+    <span class="source">Source: Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. "A new predictive equation for resting energy expenditure in healthy individuals." <em>American Journal of Clinical Nutrition</em>. 1990;51(2):241–247. <a href="https://academic.oup.com/ajcn/article/51/2/241/4695347" target="_blank" rel="noopener">View source →</a></span>
+
+    <h2>2. Macronutrient Recommendations</h2>
+    <p>Protein, carbohydrate, and fat targets in Flex are based on established sports nutrition and dietary guidelines. Macro splits are presented as options calibrated to the user's goal (e.g., fat loss, muscle gain, overall health) and are consistent with the ranges recommended by leading health authorities.</p>
+    <ul>
+      <li>Protein: 1.6–2.2 g per kg of body weight for active individuals.</li>
+      <li>Carbohydrates: adjusted to support training volume and energy demands.</li>
+      <li>Fat: minimum 20% of total calories to support hormonal health.</li>
+    </ul>
+    <span class="source">Source: Thomas DT, Erdman KA, Burke LM. "Position of the Academy of Nutrition and Dietetics, Dietitians of Canada, and the American College of Sports Medicine: Nutrition and Athletic Performance." <em>Journal of the Academy of Nutrition and Dietetics</em>. 2016;116(3):501–528. <a href="https://www.jandonline.org/article/S2212-2672(15)01802-X/fulltext" target="_blank" rel="noopener">View source →</a></span>
+
+    <h2>3. Physical Activity &amp; Step Count</h2>
+    <p>Flex tracks daily step counts and awards milestone rewards at 5,000, 8,000, 10,000, and 15,000 steps. These milestones are informed by the physical activity guidelines published by the <strong>World Health Organization (WHO)</strong>, which recommend at least 150–300 minutes of moderate-intensity aerobic activity per week for adults, of which daily walking is a primary contributor.</p>
+    <span class="source">Source: World Health Organization. "Global recommendations on physical activity for health." WHO Press, Geneva, 2010. <a href="https://www.who.int/publications/i/item/9789241599979" target="_blank" rel="noopener">View source →</a></span>
+
+    <h2>4. AI Coach (Nova)</h2>
+    <p>Nova is Flex's AI-powered coaching assistant. Responses are generated by an artificial intelligence language model and are intended to provide motivational support, general wellness education, and personalised encouragement based on your profile.</p>
+    <ul>
+      <li>Nova's responses do <strong>not</strong> constitute medical, clinical, or dietetic advice.</li>
+      <li>Nova cannot diagnose medical conditions, recommend medications, or replace a licensed healthcare professional.</li>
+      <li>Always verify AI-generated health information with a qualified professional before acting on it.</li>
+    </ul>
+
+    <h2>5. Metabolic &amp; Health Conditions</h2>
+    <p>During onboarding, Flex asks whether you have any of the following conditions: hormonal imbalance, perimenopause, insulin resistance, or thyroid conditions. This information is used <strong>solely</strong> to personalise your calorie and macronutrient targets — it is not used for diagnosis, risk assessment, or shared with third parties for medical purposes.</p>
+    <p>If you have been diagnosed with any metabolic or hormonal condition, we strongly recommend working with a registered dietitian or physician to review and adjust the targets suggested by the app.</p>
+    <span class="source">Reference: American Diabetes Association. "Standards of Medical Care in Diabetes." <em>Diabetes Care</em>. 2024;47(Suppl 1). <a href="https://diabetesjournals.org/care/issue/47/Supplement_1" target="_blank" rel="noopener">View source →</a></span>
+
+    <h2>6. General Wellness Disclaimer</h2>
+    <p>Results from using Flex vary by individual. Factors such as genetics, sleep, stress, medical history, and adherence to the programme all affect outcomes. Flex does not guarantee any specific fitness or health result.</p>
+    <p>If you experience adverse health effects while following recommendations in the app, discontinue use and consult a healthcare professional immediately.</p>
+  </div>
+</body>
+</html>
