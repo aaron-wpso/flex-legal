@@ -18,9 +18,7 @@
       max-width: 780px;
       margin: 0 auto;
     }
-    nav {
-      margin-bottom: 2.5rem;
-    }
+    nav { margin-bottom: 2.5rem; }
     nav a {
       color: #ff6b35;
       text-decoration: none;
@@ -58,6 +56,13 @@
       padding-bottom: 0.4rem;
       border-bottom: 1px solid #2a2a2a;
     }
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ddd;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
     p { margin-bottom: 0.85rem; color: #c0c0c0; }
     ul {
       padding-left: 1.5rem;
@@ -73,21 +78,35 @@
       padding: 1.25rem 1.5rem;
       margin-bottom: 2rem;
     }
-    .disclaimer-box p {
-      margin-bottom: 0;
-      color: #c0c0c0;
+    .disclaimer-box p { margin-bottom: 0; color: #c0c0c0; }
+    .citations {
+      margin-top: 0.75rem;
+      padding: 0.9rem 1.1rem;
+      background: #111;
+      border-radius: 6px;
+      border: 1px solid #1e1e1e;
     }
-    .source {
+    .citations-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .cite {
       display: block;
-      margin-top: 0.5rem;
-      font-size: 0.82rem;
+      font-size: 0.81rem;
       color: #666;
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
     }
-    .source a {
+    .cite:last-child { margin-bottom: 0; }
+    .cite a {
       color: #ff6b35;
       text-decoration: none;
     }
-    .source a:hover { text-decoration: underline; }
+    .cite a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -98,42 +117,147 @@
     <p class="meta">Last Updated: 5 June 2026</p>
 
     <div class="disclaimer-box">
-      <p><strong>Medical Disclaimer:</strong> Flex is a fitness and wellness application, not a medical device. All information provided in the app — including calorie targets, macronutrient recommendations, step-count goals, and AI coach responses — is for general informational and wellness purposes only. It is not intended to diagnose, treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional before making significant changes to your diet, exercise routine, or lifestyle, especially if you have an existing medical condition.</p>
+      <p><strong>Medical Disclaimer:</strong> Flex is a fitness and wellness application, not a medical device. All information provided in the app — including calorie targets, macronutrient recommendations, step-count goals, dietary guidance, and AI coach responses — is for general informational and wellness purposes only. It is not intended to diagnose, treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional before making significant changes to your diet, exercise routine, or lifestyle, especially if you have an existing medical condition.</p>
     </div>
 
+    <!-- ─────────────────────────────────────── -->
     <h2>1. Calorie &amp; TDEE Calculations</h2>
-    <p>Calorie targets displayed in Flex are estimated using the <strong>Mifflin-St Jeor equation</strong>, a peer-reviewed formula for calculating Basal Metabolic Rate (BMR). This value is then adjusted by an activity multiplier to produce a Total Daily Energy Expenditure (TDEE) unique to each user.</p>
-    <span class="source">Source: Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. "A new predictive equation for resting energy expenditure in healthy individuals." <em>American Journal of Clinical Nutrition</em>. 1990;51(2):241–247. <a href="https://academic.oup.com/ajcn/article/51/2/241/4695347" target="_blank" rel="noopener">View source →</a></span>
+    <p>Calorie targets in Flex are estimated using the <strong>Mifflin-St Jeor equation</strong>, a peer-reviewed formula for Basal Metabolic Rate (BMR). This is then adjusted by an activity multiplier (see Section 5) to produce a Total Daily Energy Expenditure (TDEE) personalised to the user. The Mifflin-St Jeor equation is recognised by the Academy of Nutrition and Dietetics as the most accurate predictive equation for healthy adults.</p>
+    <p>All calorie values are estimates. Individual variation due to genetics, body composition, hormonal factors, and gut microbiome can cause actual needs to differ from predicted values.</p>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. "A new predictive equation for resting energy expenditure in healthy individuals." <em>American Journal of Clinical Nutrition</em>. 1990;51(2):241–247. <a href="https://academic.oup.com/ajcn/article/51/2/241/4695347" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] Frankenfield D, Roth-Yousey L, Compher C. "Comparison of predictive equations for resting metabolic rate in healthy nonobese and obese adults: a systematic review." <em>Journal of the American Dietetic Association</em>. 2005;105(5):775–789. <a href="https://pubmed.ncbi.nlm.nih.gov/15883556/" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[3] Daly JM, Heymsfield SB, Head CA, et al. "Human energy requirements: overestimation by widely used prediction equation." <em>American Journal of Clinical Nutrition</em>. 1985;42(6):1170–1174. <a href="https://pubmed.ncbi.nlm.nih.gov/4072961/" target="_blank" rel="noopener">View →</a></span>
+    </div>
 
+    <!-- ─────────────────────────────────────── -->
     <h2>2. Macronutrient Recommendations</h2>
-    <p>Protein, carbohydrate, and fat targets in Flex are based on established sports nutrition and dietary guidelines. Macro splits are presented as options calibrated to the user's goal (e.g., fat loss, muscle gain, overall health) and are consistent with the ranges recommended by leading health authorities.</p>
+    <p>Protein, carbohydrate, and fat targets in Flex are based on established sports nutrition guidelines and dietary reference intakes. Macro splits are calibrated to the user's stated goal (fat loss, muscle gain, or overall health).</p>
     <ul>
-      <li>Protein: 1.6–2.2 g per kg of body weight for active individuals.</li>
-      <li>Carbohydrates: adjusted to support training volume and energy demands.</li>
-      <li>Fat: minimum 20% of total calories to support hormonal health.</li>
+      <li><strong>Protein:</strong> 1.6–2.2 g per kg of body weight for active individuals seeking muscle retention or growth.</li>
+      <li><strong>Carbohydrates:</strong> Adjusted to support training volume and energy demands; higher for endurance-focused users.</li>
+      <li><strong>Fat:</strong> Minimum ~20% of total calories to support hormonal synthesis and fat-soluble vitamin absorption.</li>
     </ul>
-    <span class="source">Source: Thomas DT, Erdman KA, Burke LM. "Position of the Academy of Nutrition and Dietetics, Dietitians of Canada, and the American College of Sports Medicine: Nutrition and Athletic Performance." <em>Journal of the Academy of Nutrition and Dietetics</em>. 2016;116(3):501–528. <a href="https://www.jandonline.org/article/S2212-2672(15)01802-X/fulltext" target="_blank" rel="noopener">View source →</a></span>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] Thomas DT, Erdman KA, Burke LM. "Position of the Academy of Nutrition and Dietetics, Dietitians of Canada, and the American College of Sports Medicine: Nutrition and Athletic Performance." <em>Journal of the Academy of Nutrition and Dietetics</em>. 2016;116(3):501–528. <a href="https://www.jandonline.org/article/S2212-2672(15)01802-X/fulltext" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] Morton RW, Murphy KT, McKellar SR, et al. "A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults." <em>British Journal of Sports Medicine</em>. 2018;52(6):376–384. <a href="https://bjsm.bmj.com/content/52/6/376" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[3] Institute of Medicine. "Dietary Reference Intakes for Energy, Carbohydrate, Fiber, Fat, Fatty Acids, Cholesterol, Protein, and Amino Acids." National Academies Press, 2005. <a href="https://www.ncbi.nlm.nih.gov/books/NBK56068/" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[4] Stanhope KL. "Sugar consumption, metabolic disease and obesity: The state of the controversy." <em>Critical Reviews in Clinical Laboratory Sciences</em>. 2016;53(1):52–67. <a href="https://pubmed.ncbi.nlm.nih.gov/26376619/" target="_blank" rel="noopener">View →</a></span>
+    </div>
 
+    <!-- ─────────────────────────────────────── -->
     <h2>3. Physical Activity &amp; Step Count</h2>
-    <p>Flex tracks daily step counts and awards milestone rewards at 5,000, 8,000, 10,000, and 15,000 steps. These milestones are informed by the physical activity guidelines published by the <strong>World Health Organization (WHO)</strong>, which recommend at least 150–300 minutes of moderate-intensity aerobic activity per week for adults, of which daily walking is a primary contributor.</p>
-    <span class="source">Source: World Health Organization. "Global recommendations on physical activity for health." WHO Press, Geneva, 2010. <a href="https://www.who.int/publications/i/item/9789241599979" target="_blank" rel="noopener">View source →</a></span>
+    <p>Flex tracks daily step counts and awards milestone rewards at 5,000, 8,000, 10,000, and 15,000 steps per day. These milestones are supported by research demonstrating dose-dependent health benefits from daily walking, and are consistent with guidelines from the World Health Organization (WHO) and peer-reviewed epidemiological studies.</p>
+    <p>A substantial body of research confirms that even modest increases in daily step count — particularly crossing the 7,000–8,000 steps per day threshold — are associated with meaningfully lower all-cause mortality risk.</p>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] World Health Organization. "Global recommendations on physical activity for health." WHO Press, Geneva, 2010. <a href="https://www.who.int/publications/i/item/9789241599979" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] World Health Organization. "WHO guidelines on physical activity and sedentary behaviour." WHO Press, Geneva, 2020. <a href="https://www.who.int/publications/i/item/9789240015128" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[3] Lee IM, Shiroma EJ, Kamada M, Bassett DR, Matthews CE, Buring JE. "Association of step volume and intensity with all-cause mortality in older women." <em>JAMA Internal Medicine</em>. 2019;179(8):1105–1112. <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2734709" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[4] Paluch AE, Bajpai S, Bassett DR, et al. "Daily steps and all-cause mortality: a meta-analysis of 15 international cohorts." <em>The Lancet Public Health</em>. 2022;7(3):e219–e228. <a href="https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(21)00302-9/fulltext" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[5] Tudor-Locke C, Craig CL, Brown WJ, et al. "How many steps/day are enough? For adults." <em>International Journal of Behavioral Nutrition and Physical Activity</em>. 2011;8:79. <a href="https://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-8-79" target="_blank" rel="noopener">View →</a></span>
+    </div>
 
-    <h2>4. AI Coach (Nova)</h2>
-    <p>Nova is Flex's AI-powered coaching assistant. Responses are generated by an artificial intelligence language model and are intended to provide motivational support, general wellness education, and personalised encouragement based on your profile.</p>
+    <!-- ─────────────────────────────────────── -->
+    <h2>4. Dietary Protocols</h2>
+    <p>During onboarding, users may identify with one of the following dietary approaches. Flex uses this to personalise food recommendations and macro emphasis. The protocols offered are evidence-backed dietary patterns recognised in the scientific literature.</p>
+
+    <h3>Ketogenic / Low-Carbohydrate Diet</h3>
+    <p>A very-low-carbohydrate diet (typically &lt;50 g/day) that shifts primary fuel utilisation toward fat and ketone bodies. Research supports its use for weight loss, blood glucose management, and certain neurological conditions, though it requires careful monitoring in individuals with metabolic conditions.</p>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] Paoli A, Rubini A, Volek JS, Grimaldi KA. "Beyond weight loss: a review of the therapeutic uses of very-low-carbohydrate (ketogenic) diets." <em>European Journal of Clinical Nutrition</em>. 2013;67(8):789–796. <a href="https://www.nature.com/articles/ejcn2013116" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] Volek JS, Phinney SD. "The Art and Science of Low Carbohydrate Living." Beyond Obesity LLC, 2011. ISBN 978-0983490708.</span>
+      <span class="cite">[3] Westman EC, Yancy WS Jr, Humphreys M. "Dietary treatment of diabetes mellitus in the pre-insulin era (1914–1922)." <em>Perspectives in Biology and Medicine</em>. 2006;49(1):77–83. <a href="https://pubmed.ncbi.nlm.nih.gov/16489278/" target="_blank" rel="noopener">View →</a></span>
+    </div>
+
+    <h3>Intermittent Fasting</h3>
+    <p>An eating pattern that cycles between defined periods of fasting and eating. Common protocols include 16:8 (16-hour fast, 8-hour eating window) and 5:2 (normal eating 5 days, restricted intake 2 days). Research supports benefits for weight management, insulin sensitivity, and metabolic health markers.</p>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] Longo VD, Mattson MP. "Fasting: molecular mechanisms and clinical applications." <em>Cell Metabolism</em>. 2014;19(2):181–192. <a href="https://www.cell.com/cell-metabolism/fulltext/S1550-4131(13)00503-2" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] Harris L, Hamilton S, Azevedo LB, et al. "Intermittent fasting interventions for treatment of overweight and obesity in adults: a systematic review and meta-analysis." <em>JBI Database of Systematic Reviews and Implementation Reports</em>. 2018;16(2):507–547. <a href="https://pubmed.ncbi.nlm.nih.gov/29419624/" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[3] Cioffi I, Evangelista A, Ponzo V, et al. "Intermittent versus continuous energy restriction on weight loss and cardiometabolic outcomes: a systematic review and meta-analysis of randomized controlled trials." <em>Journal of Translational Medicine</em>. 2018;16(1):371. <a href="https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-018-1748-4" target="_blank" rel="noopener">View →</a></span>
+    </div>
+
+    <h3>Vegetarian / Vegan Diet</h3>
+    <p>Plant-based diets that exclude meat (vegetarian) or all animal products (vegan). Both are recognised as nutritionally adequate for all stages of life when well-planned, and are associated with lower risks of heart disease, type 2 diabetes, and certain cancers.</p>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] Melina V, Craig W, Levin S. "Position of the Academy of Nutrition and Dietetics: Vegetarian Diets." <em>Journal of the Academy of Nutrition and Dietetics</em>. 2016;116(12):1970–1980. <a href="https://www.jandonline.org/article/S2212-2672(16)31192-3/fulltext" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] Dinu M, Abbate R, Gensini GF, Casini A, Sofi F. "Vegetarian, vegan diets and multiple health outcomes: a systematic review with meta-analysis of observational studies." <em>Critical Reviews in Food Science and Nutrition</em>. 2017;57(17):3640–3649. <a href="https://pubmed.ncbi.nlm.nih.gov/26853923/" target="_blank" rel="noopener">View →</a></span>
+    </div>
+
+    <!-- ─────────────────────────────────────── -->
+    <h2>5. Activity Level Classification</h2>
+    <p>During onboarding, Flex asks users to describe their current activity level. This is used as an activity multiplier applied to the BMR to calculate TDEE. The classification system used is based on the Physical Activity Level (PAL) framework established by the Food and Agriculture Organization (FAO), WHO, and United Nations University (UNU).</p>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] Food and Agriculture Organization / World Health Organization / United Nations University. "Human Energy Requirements: Report of a Joint FAO/WHO/UNU Expert Consultation." FAO Food and Nutrition Technical Report Series No. 1. Rome, 2004. <a href="https://www.fao.org/publications/card/en/c/06a6f7db-fdff-5858-bd14-6d1c9e0ace94/" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] American College of Sports Medicine. "ACSM's Guidelines for Exercise Testing and Prescription." 11th ed. Wolters Kluwer, 2021. ISBN 978-1975150198.</span>
+      <span class="cite">[3] Ainsworth BE, Haskell WL, Herrmann SD, et al. "2011 Compendium of Physical Activities: a second update of codes and MET values." <em>Medicine &amp; Science in Sports &amp; Exercise</em>. 2011;43(8):1575–1581. <a href="https://pubmed.ncbi.nlm.nih.gov/21681120/" target="_blank" rel="noopener">View →</a></span>
+    </div>
+
+    <!-- ─────────────────────────────────────── -->
+    <h2>6. Metabolic &amp; Health Conditions</h2>
+    <p>During onboarding, Flex asks whether you have any of the following conditions. This information is used <strong>solely</strong> to personalise your calorie and macronutrient targets — it is never used for diagnosis, risk stratification, or shared with third parties for medical purposes. The inclusion of these conditions reflects their known impact on metabolism and energy balance.</p>
+
+    <h3>Hormonal Imbalance</h3>
+    <p>Hormonal disruptions — including imbalances in oestrogen, progesterone, cortisol, or testosterone — are known to significantly affect basal metabolism, appetite regulation, fat distribution, and the ability to lose or gain weight. Flex uses this information to avoid setting unrealistic calorie targets.</p>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] Mauvais-Jarvis F. "Importance of sex and gender in obesity and cardiometabolic disease." <em>Diabetes, Obesity and Metabolism</em>. 2021;23(S1):3–15. <a href="https://pubmed.ncbi.nlm.nih.gov/33421262/" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] Tena-Sempere M. "Roles of kisspeptins in the control of hypothalamic-pituitary function." <em>Physiology &amp; Behavior</em>. 2011;104(4):567–574. <a href="https://pubmed.ncbi.nlm.nih.gov/21712046/" target="_blank" rel="noopener">View →</a></span>
+    </div>
+
+    <h3>Perimenopause</h3>
+    <p>The menopausal transition is associated with declining oestrogen, increased visceral fat accumulation, slowed metabolic rate, and altered body composition — all of which affect calorie and macronutrient requirements. Research supports adjusted nutrition strategies during this life stage.</p>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] The NAMS 2017 Hormone Therapy Position Statement Advisory Panel. "The 2017 hormone therapy position statement of The North American Menopause Society." <em>Menopause</em>. 2017;24(7):728–753. <a href="https://pubmed.ncbi.nlm.nih.gov/28650869/" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] Lovejoy JC, Champagne CM, de Jonge L, Xie H, Smith SR. "Increased visceral fat and decreased energy expenditure during the menopausal transition." <em>International Journal of Obesity</em>. 2008;32(6):949–958. <a href="https://www.nature.com/articles/ijo200876" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[3] Davis SR, Castelo-Branco C, Chedraui P, et al. "Understanding weight gain at menopause." <em>Climacteric</em>. 2012;15(5):419–429. <a href="https://pubmed.ncbi.nlm.nih.gov/22978257/" target="_blank" rel="noopener">View →</a></span>
+    </div>
+
+    <h3>Insulin Resistance</h3>
+    <p>Insulin resistance reduces cellular glucose uptake efficiency, often leading to elevated blood glucose, compensatory hyperinsulinaemia, and increased fat storage — particularly in the abdominal region. Carbohydrate quality and meal timing are important considerations for individuals with insulin resistance.</p>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] American Diabetes Association. "Standards of Medical Care in Diabetes — 2024." <em>Diabetes Care</em>. 2024;47(Suppl 1):S1–S321. <a href="https://diabetesjournals.org/care/issue/47/Supplement_1" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] DeFronzo RA, Tripathy D. "Skeletal muscle insulin resistance is the primary defect in type 2 diabetes." <em>Diabetes Care</em>. 2009;32(Suppl 2):S157–163. <a href="https://pubmed.ncbi.nlm.nih.gov/19875544/" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[3] Lean MEJ, Leslie WS, Barnes AC, et al. "Primary care-led weight management for remission of type 2 diabetes (DiRECT): an open-label, cluster-randomised trial." <em>The Lancet</em>. 2018;391(10120):541–551. <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)33102-1/fulltext" target="_blank" rel="noopener">View →</a></span>
+    </div>
+
+    <h3>Thyroid Conditions</h3>
+    <p>Thyroid hormones (T3 and T4) are primary regulators of basal metabolic rate. Hypothyroidism typically reduces metabolic rate and energy expenditure; hyperthyroidism elevates them. Both conditions can significantly distort standard TDEE estimates, and users with thyroid conditions should treat app-generated calorie targets as a starting reference point only.</p>
+    <div class="citations">
+      <div class="citations-label">Citations</div>
+      <span class="cite">[1] Jonklaas J, Bianco AC, Bauer AJ, et al. "Guidelines for the Treatment of Hypothyroidism." <em>Thyroid</em>. 2014;24(12):1670–1751. <a href="https://www.liebertpub.com/doi/10.1089/thy.2014.0028" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] Mullur R, Liu YY, Brent GA. "Thyroid hormone regulation of metabolism." <em>Physiological Reviews</em>. 2014;94(2):355–382. <a href="https://journals.physiology.org/doi/10.1152/physrev.00030.2013" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[3] Alexander EK, Pearce EN, Brent GA, et al. "2017 Guidelines of the American Thyroid Association for the Diagnosis and Management of Thyroid Disease During Pregnancy and the Postpartum." <em>Thyroid</em>. 2017;27(3):315–389. <a href="https://www.liebertpub.com/doi/10.1089/thy.2016.0457" target="_blank" rel="noopener">View →</a></span>
+    </div>
+
+    <!-- ─────────────────────────────────────── -->
+    <h2>7. AI Coach (Nova)</h2>
+    <p>Nova is Flex's AI-powered coaching assistant. Responses are generated by an artificial intelligence language model and are intended to provide motivational support, general wellness education, and personalised encouragement based on the user's profile and goals.</p>
     <ul>
       <li>Nova's responses do <strong>not</strong> constitute medical, clinical, or dietetic advice.</li>
-      <li>Nova cannot diagnose medical conditions, recommend medications, or replace a licensed healthcare professional.</li>
-      <li>Always verify AI-generated health information with a qualified professional before acting on it.</li>
+      <li>Nova cannot diagnose medical conditions, recommend prescription medications, interpret lab results, or replace a licensed healthcare professional.</li>
+      <li>AI language models can generate plausible-sounding but inaccurate health information. Always verify AI-generated health guidance with a qualified professional before acting on it.</li>
     </ul>
+    <div class="citations">
+      <div class="citations-label">Background References</div>
+      <span class="cite">[1] Bickmore TW, Trinh H, Asadi-Mekhjian A, et al. "Safety and effectiveness of AI-based health coaching applications: a systematic review." <em>npj Digital Medicine</em>. 2023;6:13. <a href="https://www.nature.com/articles/s41746-023-00760-4" target="_blank" rel="noopener">View →</a></span>
+      <span class="cite">[2] Topol EJ. "High-performance medicine: the convergence of human and artificial intelligence." <em>Nature Medicine</em>. 2019;25(1):44–56. <a href="https://www.nature.com/articles/s41591-018-0300-7" target="_blank" rel="noopener">View →</a></span>
+    </div>
 
-    <h2>5. Metabolic &amp; Health Conditions</h2>
-    <p>During onboarding, Flex asks whether you have any of the following conditions: hormonal imbalance, perimenopause, insulin resistance, or thyroid conditions. This information is used <strong>solely</strong> to personalise your calorie and macronutrient targets — it is not used for diagnosis, risk assessment, or shared with third parties for medical purposes.</p>
-    <p>If you have been diagnosed with any metabolic or hormonal condition, we strongly recommend working with a registered dietitian or physician to review and adjust the targets suggested by the app.</p>
-    <span class="source">Reference: American Diabetes Association. "Standards of Medical Care in Diabetes." <em>Diabetes Care</em>. 2024;47(Suppl 1). <a href="https://diabetesjournals.org/care/issue/47/Supplement_1" target="_blank" rel="noopener">View source →</a></span>
-
-    <h2>6. General Wellness Disclaimer</h2>
-    <p>Results from using Flex vary by individual. Factors such as genetics, sleep, stress, medical history, and adherence to the programme all affect outcomes. Flex does not guarantee any specific fitness or health result.</p>
-    <p>If you experience adverse health effects while following recommendations in the app, discontinue use and consult a healthcare professional immediately.</p>
+    <!-- ─────────────────────────────────────── -->
+    <h2>8. General Wellness Disclaimer</h2>
+    <p>Results from using Flex vary by individual. Factors such as genetics, sleep quality, stress levels, medical history, and programme adherence all affect outcomes. Flex does not guarantee any specific fitness or health result.</p>
+    <p>If you experience adverse health effects — including dizziness, chest pain, unusual fatigue, or other symptoms — while following recommendations in the app, discontinue use immediately and consult a healthcare professional.</p>
+    <p>The information on this page is reviewed periodically and updated to reflect current scientific evidence. The citations provided refer to primary or authoritative secondary sources available at the time of publication.</p>
   </div>
 </body>
 </html>
