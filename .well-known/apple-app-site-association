@@ -1,0 +1,20 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "WMUXN7DK2R.com.thrivefitness.flexfit.dev",
+          "WMUXN7DK2R.com.thrivefitness.flexfit.stg",
+          "WMUXN7DK2R.com.thrivefitness.flexfit"
+        ],
+        "components": [
+          {
+            "/": "/*",
+            "comment": "Open links on myflexfitness.com in the FLEX development, staging, and production apps."
+          }
+        ]
+      }
+    ]
+  }
+}
